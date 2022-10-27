@@ -55,7 +55,7 @@ public class ControleRemoto implements Controlador {
 		System.out.println("Está tocando?" + this.getTocando());
 		System.out.println("Volume : " + this.getVolume());
 		for (int i = 0; i  <= this.getVolume() - 1 ; i += 10) {  //i = i + 10
-			System.out.print(" | " + i);
+			System.out.print(" [] " + i);
 		}
 		
 	}
