@@ -15,6 +15,8 @@ public class Livro {
 		
 	}
 
+
+        //Métodos comuns 
 	public String getTitulo() {
 		return titulo;
 	}
