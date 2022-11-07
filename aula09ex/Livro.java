@@ -7,16 +7,20 @@ public class Livro {
 	private int totPaginas;
 	private int pagAtual;
 	private boolean aberto;
-	private String leitor;
+	private Pessoa  leitor;
 	
 	//metodoss espeeciais 
 	
-	public void detalhes() {
-		
+	public Livro(String titulo, String autor, int totPaginas, Pessoa leitor) {
+		super();
+		this.titulo = titulo;
+		this.autor = autor;
+		this.totPaginas = totPaginas;
+		this.leitor = leitor;
 	}
+	
+	
 
-
-        //Métodos comuns 
 	public String getTitulo() {
 		return titulo;
 	}
@@ -33,20 +37,22 @@ public class Livro {
 		this.autor = autor;
 	}
 
-	public int getTotPaginas() {
-		return totPaginas;
-	}
-
-	public void setTotPaginas(int totPaginas) {
-		this.totPaginas = totPaginas;
-	}
-
+	
 	public int getPagAtual() {
 		return pagAtual;
 	}
 
 	public void setPagAtual(int pagAtual) {
 		this.pagAtual = pagAtual;
+	}
+
+
+	public int getTotPaginas() {
+		return totPaginas;
+	}
+
+	public void setTotPaginas(int totPaginas) {
+		this.totPaginas = totPaginas;
 	}
 
 	public boolean isAberto() {
@@ -57,13 +63,15 @@ public class Livro {
 		this.aberto = aberto;
 	}
 
-	public String getLeitor() {
+	public Pessoa getLeitor() {
 		return leitor;
 	}
 
-	public void setLeitor(String leitor) {
+	public void setLeitor(Pessoa leitor) {
 		this.leitor = leitor;
 	}
+
+	
 	
 	
 	 
