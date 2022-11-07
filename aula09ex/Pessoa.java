@@ -7,8 +7,8 @@ public class Pessoa {
 	
 	//metodos especiais 
 	
-	public void fazerAniversaio() {
-		
+	public void fazerAniversario() {
+		this.idade++;
 	}
 
 	public String getNome() {
@@ -34,8 +34,14 @@ public class Pessoa {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
+
+	public Pessoa(String nome, int idade, String sexo) {
+		super();
+		this.nome = nome;
+		this.idade = idade;
+		this.sexo = sexo;
+	}
 	
-	//metodos comuns 
 	
 
 }
