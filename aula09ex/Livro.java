@@ -1,6 +1,6 @@
 package aula09ex;
 
-public class Livro {
+public class Livro implements Publicacao {
 	
 	private String titulo;
 	private String autor;
@@ -11,15 +11,27 @@ public class Livro {
 	
 	//metodoss espeeciais 
 	
+
+	
 	public Livro(String titulo, String autor, int totPaginas, Pessoa leitor) {
 		super();
 		this.titulo = titulo;
 		this.autor = autor;
 		this.totPaginas = totPaginas;
+		this.aberto = false;
+		this.pagAtual = 0;
 		this.leitor = leitor;
 	}
 	
 	
+
+	
+	public String detalhes() {
+		return "Livro [titulo=" + titulo + ", autor=" + autor + ", totPaginas=" + totPaginas + ", pagAtual=" + pagAtual
+				+ ", aberto=" + aberto + ", leitor=" + leitor + "]";
+	}
+
+
 
 	public String getTitulo() {
 		return titulo;
@@ -71,9 +83,52 @@ public class Livro {
 		this.leitor = leitor;
 	}
 
+
+
+
+	@Override
+	public void abrir() {
+		this.aberto = true;
+		
+	}
+
+
+
+
+	@Override
+	public void fechar() {
+		this.aberto = false;
+		
+	}
+
+
+
+
+	@Override
+	public void folhear(int p) {
+		this.pagAtual = p;
+		
+	}
+
+
+
+
+	@Override
+	public void avancarPag() {
+		this.pagAtual++;
+		
+	}
+	
+	
+	@Override
+	public void voltarPag() {
+		this.pagAtual--;
+	}
+
 	
 	
 	
 	 
 	
 }
+
