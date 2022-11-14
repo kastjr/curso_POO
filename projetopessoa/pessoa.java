@@ -9,6 +9,12 @@ public class Pessoa {
         this.idade++;
     }
 
+
+    public String toString() {
+        
+    }
+
+
     public String getNome() {
         return nome;
     }
@@ -32,5 +38,7 @@ public class Pessoa {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+
+
 
 }
