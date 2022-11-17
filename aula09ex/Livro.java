@@ -8,12 +8,13 @@ public class Livro implements Publicacao {
 	private int pagAtual;
 	private boolean aberto;
 	private Pessoa  leitor;
+        private int copiasDisponiveis;
 	
 	//metodoss espeeciais 
 	
 
 	
-	public Livro(String titulo, String autor, int totPaginas, Pessoa leitor) {
+	public Livro(String titulo, String autor, int totPaginas, Pessoa leitor,int copiasDisponiveis) {
 		super();
 		this.titulo = titulo;
 		this.autor = autor;
@@ -21,6 +22,7 @@ public class Livro implements Publicacao {
 		this.aberto = false;
 		this.pagAtual = 0;
 		this.leitor = leitor;
+                this.copiasDisponiveis = copiasDisponiveis;
 	}
 	
 	
