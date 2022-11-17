@@ -14,6 +14,7 @@ public class ProjetoLivro {
 		l[1] = new Livro("Cronicas","Abreu",50,p[2]);
 		
 		System.out.println(l[0].detalhes());
+                System.out.println(l[1].detalhes());
 		
 	}
 
