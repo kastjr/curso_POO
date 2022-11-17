@@ -10,8 +10,8 @@ public class ProjetoLivro {
 		p[1] = new Pessoa("Geysa",24,"F");
 		p[2] = new Pessoa("mario",19,"M");
 		
-		l[0] = new Livro("biblia","deus",2000,p[0]);
-		l[1] = new Livro("Cronicas","Abreu",50,p[2]);
+		l[0] = new Livro("biblia","deus",2000,p[0],4);
+		l[1] = new Livro("Cronicas","Abreu",50,p[2],5);
 		
 		System.out.println(l[0].detalhes());
                 System.out.println(l[1].detalhes());
