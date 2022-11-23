@@ -11,26 +11,26 @@ export class Pessoa {
 }
 
 export class Conta {
-	private _numero: string;
-	private _saldo: number;
+	private numero: string;
+	private saldo: number;
 
     constructor(numero: string, saldoInicial: number) {
-		this._numero = numero;
-		this._saldo = saldoInicial;
+		this.numero = numero;
+		this.saldo = saldoInicial;
 	}
 	
-	numero(): string {
-		return this._numero;
+	getnumero(): string {
+		return this.numero;
         
 	}
 
-	saldo(): number {
-		return this._saldo;
+	getsaldo(): number {
+		return this.saldo;
 	}
 
 	sacar(valor: number): boolean {
-		if (this._saldo - valor >= 0) {
-			this._saldo = this._saldo - valor;
+		if (this.saldo - valor >= 0) {
+			this.saldo = this.saldo - valor;
 
 			return true
 		}
@@ -39,23 +39,23 @@ export class Conta {
 	}
 
 	depositar(valor: number): void {
-		this._saldo += valor;
+		this.saldo += valor;
 	}
 }
 
 export class Banco {
-	private _contas: Conta[] = [];
+	private contas: Conta[] = [];
 	
 	inserir(conta: Conta): void {
         if (this.consultar(conta.numero()) == null) {
-		    this._contas.push(conta);
+		    this.contas.push(conta);
         }
 	}
 
 	consultar(numero: string): Conta {
 		let contaConsultada!: Conta;
 
-		for (let conta of this._contas) {
+		for (let conta of this.contas) {
 			if (conta.numero() == numero) {
 				contaConsultada = conta;
 				break;
@@ -89,8 +89,8 @@ export class Banco {
 	private consultarPorIndice(numero: string): number {
 		let indice: number = -1
 
-		for (let i: number = 0; i < this._contas.length; i++) {
-			if (this._contas[i].numero() == numero) {
+		for (let i: number = 0; i < this.contas.length; i++) {
+			if (this.contas[i].numero() == numero) {
 				indice = i
 				break
 			}
@@ -102,7 +102,7 @@ export class Banco {
 	alterar(conta: Conta): void {
 		let indice: number = this.consultarPorIndice(conta.numero());
 		if (indice != -1) {
-			this._contas[indice] = conta;
+			this.contas[indice] = conta;
 		}
 	}
 
@@ -110,11 +110,11 @@ export class Banco {
 		let indice: number = this.consultarPorIndice(numero);
 		
 		if (indice != -1) {
-			for (let i: number = indice; i < this._contas.length; i++) {
-				this._contas[i] = this._contas[i+1];
+			for (let i: number = indice; i < this.contas.length; i++) {
+				this.contas[i] = this.contas[i+1];
 			}
 
-			this._contas.pop();
+			this.contas.pop();
 		} 
 	}
 
@@ -127,7 +127,7 @@ export class Banco {
 	}
 
     quantidadeContas(): number {
-        return this._contas.length;
+        return this.contas.length;
     }
 
     totalSaldos(): number {
