@@ -86,21 +86,21 @@ function obterConta(): Conta {
     const conta: Conta = banco.consultar(numero)
 
     if (conta == null) {
-        console.log('\n- Operação inválida. Não existe uma conta com o número informado.')
+        console.log('\n- Erro . A conta informada não existe.')
     }
     
     return conta
 }
 
 function inserir(): void {
-    console.log('### Cadastrar conta ###\n')
+    console.log('### Cadastrar  nova conta ###\n')
     
     let numero: string = input('Número da conta: ')
 
     let conta: Conta = new Conta(numero, 0)
     
     if (banco.consultar(numero) != null) {
-        console.log('\n- Operação inválida. Não é possível inserir uma conta com um número existente.')
+        console.log('\n- Operação inválida. A conta já existe.')
     } else {
         banco.inserir(conta)
         console.log('\n- Conta cadastrada com sucesso!')
