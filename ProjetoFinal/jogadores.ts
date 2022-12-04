@@ -1,11 +1,15 @@
 abstract class Pessoa {
+    private id : number;
     private nome : string;
     private idade : number;
+    private aVenda : boolean;
 
 
-    constructor(nome:string, idade:number){
+    constructor(id:number,nome:string, idade:number, aVenda : boolean){
+        this.id = id;
         this.nome = nome;
         this.idade = idade;
+        this.aVenda = false;
     }
 
     public getNome(): string{
@@ -16,6 +20,11 @@ abstract class Pessoa {
         return this.idade;
     }
 
+    public getId(): number{
+        return this.id;
+    }
+
+
 
 }
 
@@ -23,53 +32,57 @@ class Jogador extends Pessoa {
     private posicao : string;
     private overall : number;
     private valor : number;
+    
 
-    constructor(nome:string, idade:number,posicao:string , overall:number , valor:number) {
-        super(nome,idade)
+    constructor(id: number , nome:string, idade:number,posicao:string , overall:number , valor:number , aVenda : boolean) {
+        super(id,nome,idade,aVenda)
         this.posicao = posicao;
         this.overall = overall;
         this.valor = valor;
 
     }
 
-    public aumentarOver():boolean {
+    public aumentarOver():void {
         if(this.overall<100){
             this.overall++
-            return true
+            
         }
-        return false
+        
     }
 
-    public diminuirOver():boolean {
+    public diminuirOver():void {
         if(this.overall>10){
             this.overall--
-            return true
+            
         }
-        return false
+        
     }
 
-    public calcularValor():void {
-        if(this.diminuirOver()){
-            if(this.overall<50){
-                this.valor = this.valor/5
-            }else if(this.overall<70){
-                this.valor = this.valor/2
-            }else if(this.overall<90){
-                this.valor = this.valor/2
-            }
-        }else if(this.aumentarOver()){
-            if(this.overall>65){
-                this.valor = this.valor*5
-            }else if(this.overall>70){
-                this.valor = this.valor*2
-            }else if(this.overall>80){
-                this.valor = this.valor*2
-            }else if(this.overall>90){
-                this.valor = this.valor*2
-            }
-        }
-    }
+    
+}
 
+class Tecnico extends Pessoa {
+    private overall : number;
+    private valor : number;
+
+    constructor(id: number , nome:string, idade:number , overall:number , valor:number , aVenda : boolean) {
+        super(id,nome,idade,aVenda)
+        this.overall = overall;
+        this.valor = valor;
+
+    }
+}
+
+class Comissao extends Pessoa {
+    private valor : number;
+    private funcao :string;
+
+    constructor(id: number , nome:string, idade:number , valor:number , funcao : string , aVenda : boolean) {
+        super(id,nome,idade,aVenda)
+        this.funcao = funcao;
+        this.valor = valor;
+
+    }
 }
 
 
