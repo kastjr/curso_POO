@@ -23,5 +23,24 @@ abstract class time {
            return false
     }
 
+    public aVenda(Id: Number) : void {
+         
+    }
+
+   public criarTime(): void {
+
+    }
+
+    public verMeusTimes(): void{
+
+    }
+
+    public verElenco (): void {
+
+    }
+
+    public deletarTime():void {
+
+    }
     
 }
